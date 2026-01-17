@@ -1,0 +1,7 @@
+<!DOCTYPE RCC>
+<RCC version="1.0">
+  <qresource></qresource>
+  <qresource prefix="/ini">
+    <file>setup.ini</file>
+  </qresource>
+</RCC>

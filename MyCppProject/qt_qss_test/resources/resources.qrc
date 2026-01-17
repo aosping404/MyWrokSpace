@@ -1,0 +1,10 @@
+<!DOCTYPE RCC>
+<RCC version="1.0">
+  <qresource prefix="/mainQss">
+    <file>qss/dark.qss</file>
+    <file>qss/default.qss</file>
+  </qresource>
+  <qresource prefix="/icons">
+    <file>icons/stop3.png</file>
+  </qresource>
+</RCC>

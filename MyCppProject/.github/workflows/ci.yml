@@ -1,0 +1,63 @@
+name: CI / Build / Package
+
+on:
+  push:
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  build:
+    name: Build on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os:
+        - windows-latest
+        - macos-latest
+        - ubuntu-latest
+        host:
+        - windows
+        - mac
+        - linux
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: Install Qt
+      uses: jurplel/install-qt-action@v4
+      with:
+        version: '6.8.3'
+        host: ${{ matrix.host }}
+        target: desktop
+        modules: 'qtbase qttools qtsvg qtdeclarative'
+        cache: true
+
+    - name: Setup CMake
+      uses: jwlawson/actions-setup-cmake@v1.14
+      with:
+        cmake-version: '3.27'
+
+    - name: Configure CMake
+      run: |
+        cmake -B build -S . -DCMAKE_BUILD_TYPE=Debug
+
+    - name: Build
+      run: |
+        cmake --build build --config Debug
+
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: temp-${{ matrix.os }}-${{ github.run_number }}
+        path: |
+          build/bin/**
+          build/**/*.exe
+          build/**/*.app
+        if-no-files-found: warn

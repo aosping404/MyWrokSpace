@@ -1,0 +1,38 @@
+/* 视频显示区：纯黑 */
+QLabel#videoDisplay {
+    background-color: #000000;
+    color: #555555;
+    border: 2px solid #333333;
+}
+
+/* 侧边栏：深灰 */
+QFrame#sideBar {
+    background-color: #252526;
+    border-left: 1px solid #3e3e42;
+}
+
+/* 控制栏：深蓝灰区分 */
+QFrame#controlBar {
+    background-color: #2d2d30;
+    border-top: 1px solid #007acc;
+}
+
+/* 按钮缩小化处理 */
+QPushButton {
+    background-color: #3e3e42;
+    color: white;
+    border: none;
+    padding: 4px 10px;
+    min-width: 50px;
+    max-height: 25px; /* 强制缩小按钮高度 */
+}
+
+/* 带图标按钮的特殊处理 [cite: 11, 12] */
+QPushButton#myPngButton {
+    background-image: url(:/icons/icons/stop3.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 16px 16px;
+    text-indent: -9999px; /* 隐藏文字，只留图标 */
+    width: 30px;
+}

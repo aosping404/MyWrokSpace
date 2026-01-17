@@ -1,0 +1,134 @@
+# 模型文件
+*.pt
+*.pth
+*.onnx
+*.tflite
+*.pb
+*.h5
+*.weights
+*.ckpt
+*.safetensors
+
+# YOLO 项目 - 模型目录
+yolo_project/models/
+yolo_project/runs/
+yolo_project/datasets/
+yolo_project/*.jpg
+yolo_project/*.png
+
+# 构建目录
+build/
+Build/
+BUILD/
+*_build/
+build-*/
+cmake-build-*/
+out/
+
+# 编译产物
+*.o
+*.a
+*.so
+*.dylib
+*.dll
+*.exe
+*.bin
+*.obj
+
+# Qt 构建文件
+*.pro.user
+*.pro.user.*
+*.qmlc
+*.jsc
+*.qmlproject.user
+ui_*.h
+qrc_*.cpp
+moc_*.cpp
+moc_*.h
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+_deps
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+*.egg
+.venv/
+venv/
+ENV/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# 敏感文件
+.env
+.env.local
+*.key
+*.pem
+*.p12
+*.jks
+*.crt
+secrets/
+credentials/
+config.ini
+settings.ini
+*.log
+
+# 临时文件
+*.tmp
+*.temp
+*.bak
+*.backup
+*.old
+tmp/
+temp/
+
+# 系统文件
+Thumbs.db
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+
+# 项目特定
+.project_env_configs/*.conf
+.project_env_configs/example_*.conf
+
+# ROS
+devel/
+.ros/
+install/
+
+# 大型数据文件
+*.zip
+*.tar
+*.tar.gz
+*.rar
+*.7z
+*.iso
+*.img
+
+# 测试结果和输出
+*.test_result.*
+test_results/
+output/
+logs/
+MyCppProject/Ubuntu-QT-tools/
