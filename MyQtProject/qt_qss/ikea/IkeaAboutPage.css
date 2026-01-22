@@ -1,0 +1,323 @@
+/* 宜家风格关于页面样式 */
+.ikea-about {
+  min-height: 100vh;
+  background-color: #ffffff;
+  color: #111111;
+  font-family: 'Noto Sans SC', 'Inter', sans-serif;
+}
+
+/* Hero Section */
+.ikea-about-hero {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 120px 0 80px;
+  text-align: center;
+}
+
+.ikea-about-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #111111;
+  margin-bottom: 20px;
+  letter-spacing: -0.02em;
+}
+
+.ikea-about-subtitle {
+  font-size: 1.25rem;
+  color: #484848;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Main Content */
+.ikea-about-content {
+  padding: 80px 0;
+}
+
+.ikea-about-grid {
+  display: grid;
+  gap: 60px;
+}
+
+.ikea-about-section {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.ikea-section-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #111111;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* 个人介绍卡片 */
+.ikea-about-card {
+  background: #ffffff;
+  border: 1px solid #dfdfdf;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.ikea-about-card-header {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #dfdfdf;
+}
+
+.ikea-about-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #faf9fe;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ikea-about-avatar img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+}
+
+.ikea-about-info h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #111111;
+  margin-bottom: 8px;
+}
+
+.ikea-about-info p {
+  color: #0058a3;
+  font-weight: 500;
+}
+
+.ikea-about-card-content p {
+  color: #484848;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
+
+.ikea-about-card-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* 技能栈 */
+.ikea-skills-grid {
+  display: grid;
+  gap: 30px;
+}
+
+.ikea-skill-category h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111111;
+  margin-bottom: 16px;
+}
+
+.ikea-skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.ikea-skill-tag {
+  background: #eef0f2;
+  color: #ffffff;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.ikea-skill-tag:hover {
+  background: #666666;
+  transform: translateY(-2px);
+}
+
+/* 兴趣爱好 */
+.ikea-interests-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+}
+
+.ikea-interest-card {
+  background: #ffffff;
+  border: 1px solid #dfdfdf;
+  border-radius: 8px;
+  padding: 30px 24px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.ikea-interest-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.ikea-interest-icon {
+  width: 60px;
+  height: 60px;
+  background: #eff0f2;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  color: #ffffff;
+}
+
+.ikea-interest-card h4 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #111111;
+  margin-bottom: 12px;
+}
+
+.ikea-interest-card p {
+  color: #484848;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* 联系方式 */
+.ikea-contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.ikea-contact-card {
+  background: #ffffff;
+  border: 1px solid #dfdfdf;
+  border-radius: 8px;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.ikea-contact-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  border-color: #0058a3;
+}
+
+.ikea-contact-icon {
+  width: 48px;
+  height: 48px;
+  background: #f5f5f5;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0058a3;
+  flex-shrink: 0;
+}
+
+.ikea-contact-card:hover .ikea-contact-icon {
+  background: #0058a3;
+  color: #ffffff;
+}
+
+.ikea-contact-info h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111111;
+  margin-bottom: 4px;
+}
+
+.ikea-contact-info p {
+  color: #484848;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .ikea-about-hero {
+    padding: 100px 0 60px;
+  }
+  
+  .ikea-about-title {
+    font-size: 2.5rem;
+  }
+  
+  .ikea-about-subtitle {
+    font-size: 1.125rem;
+  }
+  
+  .ikea-about-content {
+    padding: 60px 0;
+  }
+  
+  .ikea-about-grid {
+    gap: 40px;
+  }
+  
+  .ikea-section-title {
+    font-size: 1.75rem;
+  }
+  
+  .ikea-about-card {
+    padding: 30px 24px;
+  }
+  
+  .ikea-about-card-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+  }
+  
+  .ikea-interests-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .ikea-contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .ikea-about-hero {
+    padding: 80px 0 40px;
+  }
+  
+  .ikea-about-title {
+    font-size: 2rem;
+  }
+  
+  .ikea-about-card {
+    padding: 24px 20px;
+  }
+  
+  .ikea-skill-tags {
+    gap: 8px;
+  }
+  
+  .ikea-skill-tag {
+    font-size: 13px;
+    padding: 6px 12px;
+  }
+  
+  .ikea-interest-card {
+    padding: 24px 20px;
+  }
+  
+  .ikea-contact-card {
+    padding: 24px 20px;
+  }
+}

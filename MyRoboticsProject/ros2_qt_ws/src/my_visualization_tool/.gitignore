@@ -1,0 +1,42 @@
+# ROS2 构建目录
+build/
+install/
+log/
+.ros/
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+*.cmake
+
+# 编译产物
+*.o
+*.a
+*.so
+*.exe
+
+# IDE
+.vscode/settings.json
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Qt
+*.pro.user
+*.pro.user.*
+*.qmlc
+*.jsc
+*.autosave
+
+# 自动生成的文件
+ui_*.h
+moc_*.cpp
+qrc_*.cpp
+*_autogen/

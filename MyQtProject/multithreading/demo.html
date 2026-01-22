@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>极简阅读 - 博客文章页</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* 浅色模式变量 */
+            --bg-color: #fafafa;
+            --container-bg: #ffffff;
+            --text-main: #333333;
+            --text-title: #111111;
+            --text-muted: #888888;
+            --accent-color: #2563eb;
+            --border-color: #eeeeee;
+            --card-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            --card-hover-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        [data-theme="dark"] {
+            /* 深色模式变量 */
+            --bg-color: #1a1a1a;
+            --container-bg: #242424;
+            --text-main: #e5e5e5;
+            --text-title: #ffffff;
+            --text-muted: #aaaaaa;
+            --accent-color: #60a5fa;
+            --border-color: #333333;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; transition: background 0.3s, color 0.3s; }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+        }
+
+        /* 顶部导航 */
+        header {
+            position: sticky;
+            top: 0;
+            background: var(--container-bg);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 100;
+            padding: 0 5%;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo { font-weight: 700; font-size: 1.5rem; color: var(--text-title); text-decoration: none; }
+
+        /* 整体三栏布局 */
+        .page-wrapper {
+            max-width: 1200px;
+            margin: 40px auto;
+            display: grid;
+            grid-template-columns: 220px 1fr 260px;
+            gap: 30px;
+            padding: 0 20px;
+        }
+
+        /* 左侧固定导航 */
+        .sidebar-left { position: sticky; top: 100px; height: fit-content; }
+        .author-card { text-align: center; padding: 20px; border-bottom: 1px solid var(--border-color); }
+        .avatar { width: 80px; height: 80px; border-radius: 50%; background: #ddd; margin-bottom: 15px; }
+        .nav-links { list-style: none; margin-top: 20px; }
+        .nav-links li { margin: 12px 0; font-size: 0.95rem; color: var(--text-muted); cursor: pointer; }
+        .nav-links li:hover { color: var(--accent-color); }
+
+        /* 中间核心内容区 */
+        .main-content {
+            background: var(--container-bg);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: var(--card-shadow);
+            max-width: 800px;
+        }
+
+        .post-header { margin-bottom: 30px; }
+        .post-title { 
+            font-size: 2.2rem; 
+            color: var(--text-title); 
+            line-height: 1.3; 
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        .post-meta { font-size: 0.9rem; color: var(--text-muted); display: flex; gap: 15px; }
+
+        .article-body {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.1rem;
+            color: var(--text-main);
+        }
+        .article-body p { margin-bottom: 1.8em; }
+        .article-body h2 { margin: 1.5em 0 0.8em; color: var(--text-title); }
+        .article-body img { 
+            max-width: 100%; 
+            border-radius: 8px; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08); 
+            transition: transform 0.3s;
+            margin: 20px 0;
+        }
+        .article-body img:hover { transform: scale(1.02); }
+
+        /* 右侧辅助功能 */
+        .sidebar-right { position: sticky; top: 100px; height: fit-content; }
+        .widget { margin-bottom: 30px; }
+        .widget-title { font-size: 1rem; margin-bottom: 15px; color: var(--text-title); border-left: 4px solid var(--accent-color); padding-left: 10px; }
+        .toc-list { list-style: none; font-size: 0.9rem; color: var(--text-muted); }
+        .toc-list li { margin-bottom: 8px; cursor: pointer; }
+        .toc-list li:hover { color: var(--accent-color); }
+
+        /* 交互功能：深色模式切换 */
+        .theme-toggle {
+            cursor: pointer;
+            padding: 8px 16px;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            background: transparent;
+            color: var(--text-main);
+        }
+
+        /* 响应式适配 */
+        @media (max-width: 1024px) {
+            .page-wrapper { grid-template-columns: 200px 1fr; }
+            .sidebar-right { display: none; }
+        }
+
+        @media (max-width: 768px) {
+            .page-wrapper { grid-template-columns: 1fr; margin: 20px auto; }
+            .sidebar-left { display: none; }
+            .main-content { padding: 25px; border-radius: 0; }
+            .post-title { font-size: 1.7rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="nav-container">
+        <a href="#" class="logo">MyBlog</a>
+        <div style="display: flex; align-items: center; gap: 20px;">
+            <input type="text" placeholder="搜索内容..." style="padding: 5px 12px; border-radius: 15px; border: 1px solid var(--border-color); background: var(--bg-color); color: var(--text-main);">
+            <button class="theme-toggle" onclick="toggleTheme()">切换模式</button>
+        </div>
+    </div>
+</header>
+
+<div class="page-wrapper">
+    <aside class="sidebar-left">
+        <div class="author-card">
+            <div class="avatar" style="margin: 0 auto 15px;"></div>
+            <h4>张三</h4>
+            <p style="font-size: 0.8rem; color: var(--text-muted);">终身学习者 / 开发者</p>
+        </div>
+        <ul class="nav-links">
+            <li>🏠 首页</li>
+            <li>📂 归档</li>
+            <li>🏷️ 标签</li>
+            <li>☕ 关于我</li>
+        </ul>
+    </aside>
+
+    <main class="main-content">
+        <article>
+            <header class="post-header">
+                <h1 class="post-title">如何设计一个既美观又实用的博客文章页面？</h1>
+                <div class="post-meta">
+                    <span>📅 2026年1月21日</span>
+                    <span>⏱️ 阅读时间 8 分钟</span>
+                    <span>🏷️ UI/UX 设计</span>
+                </div>
+            </header>
+
+            <section class="article-body">
+                <p>在信息爆炸的时代，阅读体验已成为博客的核心竞争力。一个优秀的博客页面不仅要好看，更要让读者能够沉浸在文字中。</p>
+                
+                <h2>一、排版是灵魂</h2>
+                <p>正文我们选用了 <strong>Noto Serif SC</strong>（思源宋体），这种衬线字体在长文阅读中能有效降低视觉疲劳。配合 1.8 的行高，让文字之间拥有足够的“呼吸感”。</p>
+                
+                <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&q=80&w=800" alt="Blog Design">
+
+                <h2>二、配色方案</h2>
+                <p>我们采用了极简的中性色调。背景色并非纯白，而是使用了轻微的灰色（#fafafa），这能减少屏幕高亮度对眼睛的刺激。链接色则使用了深蓝色（#2563eb），既显眼又不显突兀。</p>
+                
+                <p>如果你在夜间访问，可以点击右上角的切换按钮，进入深色模式。背景会切换为深灰色，保护读者的视力。</p>
+            </section>
+        </article>
+    </main>
+
+    <aside class="sidebar-right">
+        <div class="widget">
+            <h3 class="widget-title">文章目录</h3>
+            <ul class="toc-list">
+                <li>1. 排版是灵魂</li>
+                <li>2. 配色方案</li>
+                <li>3. 交互与动效</li>
+                <li>4. 响应式适配</li>
+            </ul>
+        </div>
+        <div class="widget">
+            <h3 class="widget-title">热门文章</h3>
+            <ul class="toc-list" style="color: var(--text-main)">
+                <li>⚡ 2024年CSS新特性指南</li>
+                <li>⚡ 为什么你应该开始写作</li>
+            </ul>
+        </div>
+    </aside>
+</div>
+
+<script>
+    function toggleTheme() {
+        const body = document.documentElement;
+        if (body.getAttribute('data-theme') === 'dark') {
+            body.removeAttribute('data-theme');
+        } else {
+            body.setAttribute('data-theme', 'dark');
+        }
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE RCC>
+<RCC version="1.0">
+    <qresource prefix="/styles">
+        <!-- QSS 样式文件 -->
+        <file alias="AMOLED.qss">../Styles/AMOLED.qss</file>
+        <file alias="Aqua.qss">../Styles/Aqua.qss</file>
+        <file alias="ConsoleStyle.qss">../Styles/ConsoleStyle.qss</file>
+        <file alias="ElegantDark.qss">../Styles/ElegantDark.qss</file>
+        <file alias="MacOS.qss">../Styles/MacOS.qss</file>
+        <file alias="ManjaroMix.qss">../Styles/ManjaroMix.qss</file>
+        <file alias="MaterialDark.qss">../Styles/MaterialDark.qss</file>
+        <file alias="NeonButtons.qss">../Styles/NeonButtons.qss</file>
+        <file alias="Ubuntu.qss">../Styles/Ubuntu.qss</file>
+        <file alias="default.qss">../Styles/default.qss</file>
+        <file alias="or.qss">../Styles/or.qss</file>
+        <file alias="white.qss">../Styles/white.qss</file>
+        <file alias="QDarkStyleSheet.qss">../Styles/QDarkStyleSheet.qss</file>
+        <file alias="stylesheet2.qss">../Styles/stylesheet2.qss</file>
+        <file alias="style.qss">../Styles/style.qss</file>
+        <file alias="coffee.qss">../Styles/coffee.qss</file>
+        <file alias="default2.qss">../Styles/default2.qss</file>
+        <file alias="pagefold.qss">../Styles/pagefold.qss</file>
+        <file alias="application.qss">../Styles/application.qss</file>
+        <file alias="blue.qss">../Styles/blue.qss</file>
+        <file alias="khaki.qss">../Styles/khaki.qss</file>
+        <file alias="nostyle.qss">../Styles/nostyle.qss</file>
+        <file alias="transparent.qss">../Styles/transparent.qss</file>
+        <file alias="OverlayWidget.qss">../Styles/OverlayWidget.qss</file>
+        <file alias="style2.qss">../Styles/style2.qss</file>
+        <file alias="no.qss">../Styles/no.qss</file>
+        <file alias="style3.qss">../Styles/style3.qss</file>
+        <file alias="style4.qss">../Styles/style4.qss</file>
+        <file alias="abc_satellite.qss">../Styles/abc_satellite.qss</file>
+        <file alias="abc.qss">../Styles/abc.qss</file>
+        <file alias="phonegui.qss">../Styles/phonegui.qss</file>
+        <file alias="IKEA.qss">../Styles/IKEA.qss</file>
+    </qresource>
+    <qresource prefix="/fonts">
+        <!-- IKEA 字体文件 -->
+        <file alias="Inter-Regular.ttf">../ikea/fonts/Inter-Regular.ttf</file>
+        <file alias="DMSerifDisplay-Regular.ttf">../ikea/fonts/DMSerifDisplay-Regular.ttf</file>
+    </qresource>
+    <qresource prefix="/icons">
+        <!-- 常用图标 -->
+        <file alias="dark/PNG/Navigation/arrow_forward.png">../dark/PNG/Navigation/arrow_forward.png</file>
+        <file alias="dark/PNG/Navigation/arrow_down.png">../dark/PNG/Navigation/arrow_down.png</file>
+        <file alias="dark/PNG/User interface/check_box.png">../dark/PNG/User interface/check_box.png</file>
+        <file alias="dark/PNG/User interface/error.png">../dark/PNG/User interface/error.png</file>
+        <file alias="dark/PNG/User interface/settings.png">../dark/PNG/User interface/settings.png</file>
+        <file alias="dark/PNG/User interface/home.png">../dark/PNG/User interface/home.png</file>
+        <file alias="dark/PNG/User interface/search.png">../dark/PNG/User interface/search.png</file>
+        <file alias="dark/PNG/User interface/favorite.png">../dark/PNG/User interface/favorite.png</file>
+        <file alias="dark/PNG/User interface/profile.png">../dark/PNG/User interface/profile.png</file>
+        <file alias="dark/PNG/Shopping/shopping_cart.png">../dark/PNG/Shopping/shopping_cart.png</file>
+    </qresource>
+    <!-- 注意：Qt 6 的 qt_add_translations 会自动处理翻译文件，无需手动添加到资源文件 -->
+    <!-- 如果需要手动管理翻译文件，可以取消下面的注释 -->
+    <!--
+    <qresource prefix="/i18n">
+        <file alias="qt_qss_zh_CN.qm">../translations/qt_qss_zh_CN.qm</file>
+    </qresource>
+    -->
+</RCC>

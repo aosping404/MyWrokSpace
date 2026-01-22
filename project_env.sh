@@ -301,13 +301,20 @@ activate_moveit2() {
     local ws_path=${1:-"$HOME/ws_moveit2"}
     local install_path="$ws_path/install"
     
+    # 检查标准位置
     if [[ ! -d "$install_path" ]]; then
-        print_warning "MoveIt2工作空间不存在: $install_path"
-        print_info "请先编译MoveIt2工作空间"
-        return 1
+        # 检查非标准位置（install 目录在 src/ 下）
+        install_path="$ws_path/src/install"
+        if [[ ! -d "$install_path" ]]; then
+            print_warning "MoveIt2工作空间不存在: $ws_path/install 或 $ws_path/src/install"
+            print_info "请先编译MoveIt2工作空间"
+            return 1
+        else
+            print_info "检测到非标准位置: $install_path"
+        fi
     fi
     
-    print_info "激活MoveIt2工作空间: $ws_path"
+    print_info "激活MoveIt2工作空间: $ws_path (install: $install_path)"
     source "$install_path/setup.bash"
 }
 

@@ -1,0 +1,256 @@
+    /* 宜家风格Footer - 浅色主题 */
+.ikea-footer {
+  background-color: #faf9fc;
+  color: #111111;
+  font-family: 'Noto Sans SC', 'Inter', sans-serif;
+}
+
+/* 主要内容区域 */
+.ikea-footer-main {
+  padding: 48px 0 32px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.ikea-footer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.ikea-footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 48px;
+}
+
+.ikea-footer-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.ikea-footer-heading {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111111;
+  margin: 0 0 24px 0;
+  letter-spacing: 0.3px;
+}
+
+.ikea-footer-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ikea-footer-list li {
+  margin-bottom: 12px;
+}
+
+.ikea-footer-link {
+  color: #111111;
+  text-decoration: none;
+  font-size: 15px;
+  line-height: 1.5;
+  transition: color 0.2s ease;
+  display: block;
+}
+
+.ikea-footer-link:hover {
+  color: #666666;
+}
+
+/* 社交媒体链接 */
+.ikea-footer-social {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.ikea-footer-social-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #111111;
+  text-decoration: none;
+  font-size: 15px;
+  transition: color 0.2s ease;
+}
+
+.ikea-footer-social-link:hover {
+  color: #666666;
+}
+
+.ikea-footer-social-link svg {
+  flex-shrink: 0;
+}
+
+/* 邮件订阅 */
+.ikea-footer-newsletter {
+  margin-top: 20px;
+}
+
+.ikea-footer-newsletter-text {
+  font-size: 14px;
+  color: #111111;
+  margin: 0 0 12px 0;
+}
+
+.ikea-footer-newsletter-form {
+  display: flex;
+  gap: 8px;
+}
+
+.ikea-footer-newsletter-input {
+  flex: 1;
+  padding: 12px 16px;
+  border: 2px solid #e0e0e0;
+  background-color: #ffffff;
+  color: #111111;
+  font-size: 15px;
+  border-radius: 0;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.ikea-footer-newsletter-input:focus {
+  border-color: #0058a3;
+  background-color: #ffffff;
+}
+
+.ikea-footer-newsletter-input::placeholder {
+  color: #888888;
+}
+
+.ikea-footer-newsletter-btn {
+  padding: 12px 24px;
+  background-color: #ffdb00;
+  color: #0058a3;
+  border: none;
+  border-radius: 0;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.ikea-footer-newsletter-btn:hover {
+  background-color: #ffd700;
+  transform: translateY(-1px);
+}
+
+/* 底部版权区域 */
+.ikea-footer-bottom {
+  padding: 24px 0;
+  background-color: #f9f9fb;
+}
+
+.ikea-footer-bottom-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.ikea-footer-logo-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ikea-footer-logo {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.ikea-footer-brand {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111111;
+}
+
+.ikea-footer-legal {
+  display: flex;
+  gap: 24px;
+}
+
+.ikea-footer-legal-link {
+  color: #111111;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s ease;
+}
+
+.ikea-footer-legal-link:hover {
+  color: #666666;
+}
+
+.ikea-footer-copyright {
+  color: #111111;
+  font-size: 14px;
+}
+
+.ikea-footer-copyright p {
+  margin: 0;
+}
+
+/* 响应式设计 */
+@media (max-width: 1024px) {
+  .ikea-footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .ikea-footer-main {
+    padding: 40px 0 30px;
+  }
+  
+  .ikea-footer-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .ikea-footer-bottom-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+  }
+  
+  .ikea-footer-legal {
+    order: -1;
+  }
+  
+  .ikea-footer-newsletter-form {
+    flex-direction: column;
+  }
+  
+  .ikea-footer-newsletter-btn {
+    align-self: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .ikea-footer-container {
+    padding: 0 16px;
+  }
+  
+  .ikea-footer-main {
+    padding: 30px 0 20px;
+  }
+  
+  .ikea-footer-bottom {
+    padding: 20px 0;
+  }
+  
+  .ikea-footer-legal {
+    flex-direction: column;
+    gap: 12px;
+  }
+}

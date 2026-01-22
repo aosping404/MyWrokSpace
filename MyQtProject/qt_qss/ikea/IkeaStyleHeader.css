@@ -1,0 +1,402 @@
+/* 宜家风格导航样式 - 更新头像尺寸 */
+.ikea-top-header {
+  background-color: var(--theme-primary, #0058a3);
+  color: #ffffff;
+  padding: 8px 0;
+  font-size: 14px;
+  position: relative;
+  z-index: 1001;
+}
+
+.ikea-top-header-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ikea-top-header-left {
+  display: flex;
+  gap: 20px;
+}
+
+.ikea-top-header-link {
+  color: #ffffff !important;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 13px;
+  opacity: 0.9;
+  font-weight: 400;
+}
+
+.ikea-top-header-link:hover {
+  opacity: 0.8;
+}
+
+.ikea-top-header-right {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.ikea-top-header-right span {
+  color: #ffffff !important;
+  opacity: 0.8;
+  font-weight: 400;
+}
+
+/* 主导航 */
+.ikea-main-header {
+  background-color: #faf9fc;
+  border-bottom: 1px solid var(--theme-border, #dfdfdf);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: var(--theme-shadow, 0 2px 8px rgba(0, 0, 0, 0.1));
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ikea-main-header.scrolled {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.ikea-main-nav {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+}
+
+.ikea-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--theme-primary, #0058a3);
+  font-weight: 700;
+  font-size: 24px;
+  letter-spacing: -0.5px;
+  transition: transform 0.3s ease;
+}
+
+.ikea-logo:hover {
+  transform: scale(1.05);
+}
+
+.ikea-logo-img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
+.ikea-logo-text {
+  font-family: var(--theme-font-serif, "Inter", sans-serif);
+}
+
+.ikea-nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 40px;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.ikea-nav-item {
+  position: relative;
+}
+
+.ikea-nav-link {
+  color: var(--theme-text, #111111);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 10px 0;
+  transition: all 0.3s ease;
+  position: relative;
+  font-family: var(--theme-font-primary, inherit);
+}
+
+.ikea-nav-link:hover {
+  color: var(--theme-primary, #0058a3);
+}
+
+.ikea-nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--theme-primary, #0058a3);
+  transition: width 0.3s ease;
+}
+
+.ikea-nav-link:hover::after,
+.ikea-nav-link.active::after {
+  width: 100%;
+}
+
+.ikea-nav-link.active {
+  color: var(--theme-primary, #0058a3);
+  font-weight: 600;
+}
+
+.ikea-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+
+
+.ikea-icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: var(--theme-borderRadius, 4px);
+  transition: all 0.3s ease;
+  color: var(--theme-text, #111111);
+  position: relative;
+}
+
+.ikea-icon-btn:hover {
+  background-color: var(--theme-surface, #f5f5f5);
+  color: var(--theme-primary, #0058a3);
+}
+
+.ikea-user-avatar-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ikea-user-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.ikea-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  color: var(--theme-text, #111111);
+}
+
+/* 工具提示 */
+.ikea-tooltip {
+  position: relative;
+}
+
+.ikea-tooltip::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.9);
+  color: #ffffff;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 10000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.ikea-tooltip::before {
+  content: '';
+  position: absolute;
+  top: calc(100% + 2px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid rgba(0, 0, 0, 0.9);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 10001;
+}
+
+.ikea-tooltip:hover::after,
+.ikea-tooltip:hover::before {
+  opacity: 1;
+}
+
+/* 面包屑导航 */
+.ikea-breadcrumb {
+  background-color: var(--theme-surface, #f5f5f5);
+  padding: 16px 0;
+  border-bottom: 1px solid var(--theme-border, #dfdfdf);
+}
+
+.ikea-breadcrumb-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.ikea-breadcrumb-list {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  list-style: none;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+}
+
+.ikea-breadcrumb-item {
+  color: var(--theme-textSecondary, #767676);
+}
+
+.ikea-breadcrumb-link {
+  color: var(--theme-primary, #0058a3);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.ikea-breadcrumb-link:hover {
+  text-decoration: underline;
+}
+
+.ikea-breadcrumb-separator {
+  color: var(--theme-textSecondary, #767676);
+}
+
+/* 响应式设计 */
+@media (max-width: 1024px) {
+}
+
+@media (max-width: 768px) {
+  .ikea-top-header {
+    display: none;
+  }
+  
+  .ikea-main-nav {
+    padding: 0 16px;
+    height: 60px;
+  }
+  
+  .ikea-nav-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--theme-background, #ffffff);
+    flex-direction: column;
+    padding: 20px;
+    box-shadow: var(--theme-shadow, 0 4px 16px rgba(0, 0, 0, 0.15));
+    gap: 20px;
+    border-top: 1px solid var(--theme-border, #dfdfdf);
+  }
+  
+  .ikea-nav-menu.active {
+    display: flex;
+  }
+  
+  .ikea-menu-toggle {
+    display: block;
+  }
+  
+
+  
+  .ikea-nav-actions {
+    gap: 12px;
+  }
+  
+  .ikea-logo-text {
+    font-size: 20px;
+  }
+  
+  .ikea-logo-img {
+    height: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ikea-main-nav {
+    padding: 0 12px;
+  }
+  
+  .ikea-breadcrumb-content {
+    padding: 0 12px;
+  }
+  
+  .ikea-logo-text {
+    font-size: 18px;
+  }
+  
+  .ikea-logo-img {
+    height: 28px;
+  }
+}
+
+/* 动画效果 */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.ikea-nav-menu.active {
+  animation: slideDown 0.3s ease-out;
+}
+
+/* 主题特定样式 */
+.theme-original .ikea-main-header,
+.theme-original .ikea-top-header,
+.theme-original .ikea-breadcrumb {
+  display: none;
+}
+
+.theme-ikea .ikea-main-header {
+  background-color: #faf9fc;
+  border-bottom-color: #dfdfdf;
+}
+
+.theme-ikea .ikea-nav-link {
+  color: #111111;
+}
+
+.theme-ikea .ikea-nav-link:hover,
+.theme-ikea .ikea-nav-link.active {
+  color: #0058a3;
+}
+
+.theme-ikea .ikea-search-input {
+  background-color: #f5f5f5;
+  border-color: #dfdfdf;
+  color: #111111;
+}
+
+.theme-ikea .ikea-search-input:focus {
+  background-color: #ffffff;
+  border-color: #0058a3;
+}
